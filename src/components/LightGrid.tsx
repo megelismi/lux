@@ -3,14 +3,17 @@ import Light from "./Light";
 import "./Light.css";
 
 function LightGrid() {
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("green");
 
   return (
     <>
-      <button onClick={() => setColor("red")}>Red</button>
-      <button onClick={() => setColor("blue")}>Blue</button>
-      <button onClick={() => setColor("green")}>Green</button>
       <div className="light-grid">
+        <Light color={color} />
+        <Light color={color} />
+        <Light color={color} />
+        <Light color={color} />
+        <Light color={color} />
+        <Light color={color} />
         <Light color={color} />
         <Light color={color} />
         <Light color={color} />
@@ -33,5 +36,24 @@ function LightGrid() {
     </>
   );
 }
+
+// <button
+//   style={{ backgroundColor: "#DC0073" }}
+//   onClick={() => setColor("red")}
+// >
+//   Red
+// </button>
+// <button
+//   style={{ backgroundColor: "#00FFCD" }}
+//   onClick={() => setColor("blue")}
+// >
+//   Blue
+// </button>
+// <button
+//   style={{ backgroundColor: "##F5B700" }}
+//   onClick={() => setColor("green")}
+// >
+//   Green
+// </button>
 
 export default LightGrid;
