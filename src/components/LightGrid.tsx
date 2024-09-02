@@ -2,71 +2,93 @@ import { useState } from "react";
 import Light from "./Light";
 import "./Light.css";
 
+const RED = "#ff0000";
+const ORANGE = "#ff8700";
+const YELLOW = "#ffd300";
+const BRIGHT_YELLOW = "#deff0a";
+const BRIGHT_GREEN = "#a1ff0a";
+const GREEN = "#0aff99";
+const BRIGHT_BLUE = "#0aefff";
+const BLUE = "#147df5";
+const INDIGO = "#580aff";
+const VIOLET = "#be0aff";
+
+const RAINBOW = [
+  RED,
+  ORANGE,
+  YELLOW,
+  BRIGHT_YELLOW,
+  BRIGHT_GREEN,
+  GREEN,
+  BRIGHT_BLUE,
+  BLUE,
+  INDIGO,
+  VIOLET,
+];
+
 function LightGrid() {
-  const [color, setColor] = useState("#80ffdb");
+  const [color, setColor] = useState(null);
+  const [colorIndex, setColorIndex] = useState(null);
+  const [gradientDirection, setGradientDirection] = useState(null);
 
-  // color palette
+  const initializeGradient = () => {
+    setColor(RAINBOW[0]);
+    setColorIndex(0);
+    setGradientDirection("forwards");
+  };
 
-  // 80ffdb
-  // 72efdd
-  // 64dfdf
-  // 56cfe1
-  // 48bfe3
-  // 4ea8de
-  // 5390d9
-  // 5e60ce
-  // 6930c3
-  // 7400b8
+  // TODO: add comment...
+  const updateColor = () => {
+    // this is the first time through, initialize the gradient state
+    if (color === null) {
+      initializeGradient();
+
+      return;
+    }
+
+    const updatedIndex =
+      gradientDirection === "forwards" ? colorIndex + 1 : colorIndex - 1;
+
+    setColorIndex(updatedIndex);
+    setColor(RAINBOW[updatedIndex]);
+
+    if (updatedIndex === 0) {
+      setGradientDirection("forwards");
+    } else if (updatedIndex === RAINBOW.length - 1) {
+      setGradientDirection("backwards");
+    }
+  };
 
   return (
     <>
       <div className="light-grid">
-        <Light color={"#80ffdb"} />
-        <Light color={"#72efdd"} />
-        <Light color={"#64dfdf"} />
-        <Light color={"#56cfe1"} />
-        <Light color={"#48bfe3"} />
-        <Light color={"#4ea8de"} />
-        <Light color={"#5390d9"} />
-        <Light color={"#5e60ce"} />
-        <Light color={"#6930c3"} />
-        <Light color={"#7400b8"} />
-        <Light color={"#80ffdb"} />
-        <Light color={"#72efdd"} />
-        <Light color={"#64dfdf"} />
-        <Light color={"#56cfe1"} />
-        <Light color={"#48bfe3"} />
-        <Light color={"#4ea8de"} />
-        <Light color={"#5390d9"} />
-        <Light color={"#5e60ce"} />
-        <Light color={"#6930c3"} />
-        <Light color={"#7400b8"} />
-        <Light color={"#80ffdb"} />
-        <Light color={"#72efdd"} />
-        <Light color={"#64dfdf"} />
-        <Light color={"#56cfe1"} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
+        <Light color={color} onHover={updateColor} />
       </div>
     </>
   );
 }
-
-// <button
-//   style={{ backgroundColor: "#DC0073" }}
-//   onClick={() => setColor("red")}
-// >
-//   Red
-// </button>
-// <button
-//   style={{ backgroundColor: "#00FFCD" }}
-//   onClick={() => setColor("blue")}
-// >
-//   Blue
-// </button>
-// <button
-//   style={{ backgroundColor: "##F5B700" }}
-//   onClick={() => setColor("green")}
-// >
-//   Green
-// </button>
 
 export default LightGrid;

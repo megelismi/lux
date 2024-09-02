@@ -1,14 +1,17 @@
 import { useState } from "react";
 import "./Light.css";
 
-function Light({ color }: { color: string }) {
-  const [hovering, setHovering] = useState(true);
+function Light({ color, onHover }: { color: string; onHover: () => void }) {
+  const [hovering, setHovering] = useState(false);
 
   return (
     <>
       <div
         className="light-container"
-        onMouseEnter={() => setHovering(true)}
+        onMouseEnter={() => {
+          onHover();
+          setHovering(true);
+        }}
         onMouseLeave={() => setHovering(false)}
       >
         <div
