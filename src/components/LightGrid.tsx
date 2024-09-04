@@ -8,6 +8,7 @@ function LightGrid() {
   const [gradientDirection, setGradientDirection] = useState(null);
   const [gradient, setGradient] = useState(null);
 
+  // TODO: add comment for func
   function generateColorGradient(startColor, endColor, steps) {
     // Function to convert RGB color to an array of numbers
     function rgbToArray(color) {
@@ -44,9 +45,9 @@ function LightGrid() {
   const updateColor = () => {
     // this is the first time through, initialize the gradient state
     if (gradient === null) {
-      const startColor = "rgb(255, 0, 0)"; // Red
-      const endColor = "rgb(0, 0, 255)"; // Blue
-      const steps = 16;
+      const startColor = "rgb(255, 0, 0)"; // Red // hard coded for now
+      const endColor = "rgb(0, 0, 255)"; // Blue // hard coded for now
+      const steps = 16; // hard coded for now
 
       const generatedGradient = generateColorGradient(
         startColor,
