@@ -1,0 +1,32 @@
+.cube {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side {
+  height: 95px;
+  width: 95px;
+  line-height: 90px;
+  position: absolute;
+  text-align: center;
+}
+
+.top,
+.left,
+.right {
+  border: 3px solid white;
+}
+
+.top {
+  transform: rotate(-45deg) skew(15deg, 15deg);
+}
+
+.left {
+  transform: rotate(15deg) skew(15deg, 15deg) translate(-50%, 100%);
+}
+
+.right {
+  transform: rotate(-15deg) skew(-15deg, -15deg) translate(50%, 100%);
+}
