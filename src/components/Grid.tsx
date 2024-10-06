@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Light from "./Light";
+import Cube from "./Cube";
 import "./Light.css";
+import "./Cube.css";
 
-function LightGrid() {
+function Grid() {
   const [color, setColor] = useState(null);
   const [colorIndex, setColorIndex] = useState(null);
   const [gradientDirection, setGradientDirection] = useState(null);
@@ -79,33 +80,10 @@ function LightGrid() {
   return (
     <>
       <div className="light-grid">
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
-        <Light color={color} onHover={updateColor} />
+        <Cube color={color} onHover={updateColor} />
       </div>
     </>
   );
 }
 
-export default LightGrid;
+export default Grid;
