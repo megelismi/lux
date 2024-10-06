@@ -1,12 +1,17 @@
 import { useState } from "react";
 import "./Cube.css";
 
-function Cube({ color, onHover }: { color: string; onHover: () => void }) {
+function CubeSide({
+  classNames,
+  color,
+  onHover,
+}: {
+  classNames: string;
+  color: string;
+  onHover: () => void;
+}) {
   const [hovering, setHovering] = useState(false);
 
-  console.log("hovering", hovering);
-
-  console.log("color", color);
   return (
     <div
       onMouseEnter={() => {
@@ -14,32 +19,23 @@ function Cube({ color, onHover }: { color: string; onHover: () => void }) {
         setHovering(true);
       }}
       onMouseLeave={() => setHovering(false)}
-    >
+      style={
+        hovering
+          ? { backgroundColor: `${color}` }
+          : { backgroundColor: "transparent" }
+      }
+      className={classNames}
+    />
+  );
+}
+
+function Cube({ color, onHover }: { color: string; onHover: () => void }) {
+  return (
+    <div>
       <div className="cube-body">
-        <div
-          style={
-            hovering
-              ? { backgroundColor: `${color}` }
-              : { backgroundColor: "transparent" }
-          }
-          className="side top"
-        />
-        <div
-          style={
-            hovering
-              ? { backgroundColor: `${color}` }
-              : { backgroundColor: "transparent" }
-          }
-          className="side left"
-        />
-        <div
-          style={
-            hovering
-              ? { backgroundColor: `${color}` }
-              : { backgroundColor: "transparent" }
-          }
-          className="side right"
-        />
+        <CubeSide color={color} classNames="side top" onHover={onHover} />
+        <CubeSide color={color} classNames="side left" onHover={onHover} />
+        <CubeSide color={color} classNames="side right" onHover={onHover} />
       </div>
     </div>
   );
