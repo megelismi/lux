@@ -81,6 +81,13 @@ function Grid() {
     <>
       <div className="light-grid">
         <Cube color={color} onHover={updateColor} />
+        <Cube color={color} onHover={updateColor} />
+        <Cube color={color} onHover={updateColor} />
+      </div>
+      <div className="light-grid light-grid-shifted">
+        <Cube color={color} onHover={updateColor} />
+        <Cube color={color} onHover={updateColor} />
+        <Cube color={color} onHover={updateColor} />
       </div>
     </>
   );

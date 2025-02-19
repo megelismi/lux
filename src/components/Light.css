@@ -5,9 +5,18 @@
 }
 
 .light-grid {
-  padding: 20px;
+  /* padding: 20px; */
+
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
+  height: 205px;
+  grid-template-columns: repeat(3, 100px);
+  /* grid-template-rows: repeat(2, 125px); */
+  gap: 80px;
+}
+
+.light-grid-shifted {
+  margin-left: 90px;
+  margin-top: -50px;
 }
 
 .light-body {
@@ -20,24 +29,8 @@
 }
 
 .light-body:hover {
-   transition: background-color 0.2s ease-in; /* Faster fade-in effect */
+  transition: background-color 0.2s ease-in; /* Faster fade-in effect */
 }
-
-/* .green.light-body:hover {
-  background-color: rgba(0, 255, 205, 1);
-  animation: fadeIn 0.1s ease-in; /* Faster fade-in effect */
-}
-
-/*@keyframes fadeIn {
-  from {
-    background-color: rgba(0, 255, 205, 0);
-  }
-  to {
-    background-color: rgba(0, 255, 205, 1);
-  }
-} */
 
 /* TODO: set dynamic colors and give colors pretty effects: fade, blink etc */
 /* q: does hover work on mobile? */
-
-

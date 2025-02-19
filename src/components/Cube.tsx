@@ -31,12 +31,10 @@ function CubeSide({
 
 function Cube({ color, onHover }: { color: string; onHover: () => void }) {
   return (
-    <div>
-      <div className="cube-body">
-        <CubeSide color={color} classNames="side top" onHover={onHover} />
-        <CubeSide color={color} classNames="side left" onHover={onHover} />
-        <CubeSide color={color} classNames="side right" onHover={onHover} />
-      </div>
+    <div className="cube-body">
+      <CubeSide color={color} classNames="side top" onHover={onHover} />
+      <CubeSide color={color} classNames="side left" onHover={onHover} />
+      <CubeSide color={color} classNames="side right" onHover={onHover} />
     </div>
   );
 }
