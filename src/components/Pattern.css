@@ -1,0 +1,16 @@
+.pattern-container {
+  position: relative;
+  border: 3px solid red;
+  height: 500px;
+  width: 700px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.pattern {
+  position: absolute;
+  top: -50px;
+  left: -55px;
+  right: 0;
+  bottom: 0;
+}

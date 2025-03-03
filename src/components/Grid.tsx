@@ -78,7 +78,7 @@ function Grid() {
   };
 
   return (
-    <>
+    <div className="light-grid-container">
       <div className="light-grid">
         <Cube color={color} onHover={updateColor} />
         <Cube color={color} onHover={updateColor} />
@@ -89,7 +89,7 @@ function Grid() {
         <Cube color={color} onHover={updateColor} />
         <Cube color={color} onHover={updateColor} />
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,6 +1,7 @@
 import "./Layout.css";
 import ControlPanel from "./components/ControlPanel";
-// import Grid from "./components/Grid";
+import Pattern from "./components/Pattern";
+import Grid from "./components/Grid";
 
 function Layout() {
   return (
@@ -9,7 +10,9 @@ function Layout() {
       <div className="sidebar">
         <ControlPanel />
       </div>
-      <div className="main">MAIN</div>
+      <div className="main">
+        <Pattern />
+      </div>
     </div>
   );
 }
