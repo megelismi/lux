@@ -3,14 +3,14 @@ function Hexagon({
   fill,
   stroke,
   size,
-  i,
-  j,
+  xAxisAdjustment,
+  yAxisAdjustment,
 }: {
   fill: string;
   stroke: string;
   size: number;
-  i: number; // this is the row adjustment, rename this to be more descriptive
-  j: number; // this is the column adjustment, rename this to be more descriptive
+  xAxisAdjustment: number; // this is the row adjustment so that we can create a honeycomb pattern
+  yAxisAdjustment: number; // this is the column adjustment so that we can create a honeycomb pattern
 }) {
   // set a default width and height if one is not given
   // width and height should be the same value
@@ -23,8 +23,8 @@ function Hexagon({
     <div
       style={{
         position: "absolute",
-        top: `${i * 70}px`,
-        left: `${j * 88 + ((i * 44) % 88)}px`,
+        top: `${xAxisAdjustment * 70}px`,
+        left: `${yAxisAdjustment * 88 + ((xAxisAdjustment * 44) % 88)}px`,
       }}
     >
       <svg
