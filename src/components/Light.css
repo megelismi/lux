@@ -20,17 +20,14 @@
   margin-top: -50px;
 }
 
-.light-body {
-  width: 60px;
-  height: 60px;
-  position: relative;
-  border: 1px solid white;
-  border-radius: 4px;
-  transition: background-color 1.5s ease-out; /* Slower fade-out effect */
+/* right now this is only being used for the hexagon svg, so maybe make
+ * it specific to that one component */
+.svg-light-body {
+  transition: fill 0.5s ease-out; /* Slower fade-out effect */
 }
 
-.light-body:hover {
-  transition: background-color 0.2s ease-in; /* Faster fade-in effect */
+.svg-light-body:hover {
+  transition: fill 0.25s ease-in; /* Faster fade-in effect */
 }
 
 /* TODO: set dynamic colors and give colors pretty effects: fade, blink etc */
