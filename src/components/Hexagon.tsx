@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // is there a way to indicate that a prop may sometimes not be defined?
 function Hexagon({
   fill,
@@ -12,15 +14,21 @@ function Hexagon({
   xAxisAdjustment: number; // this is the row adjustment so that we can create a honeycomb pattern
   yAxisAdjustment: number; // this is the column adjustment so that we can create a honeycomb pattern
 }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   // set a default width and height if one is not given
   // width and height should be the same value
   const width = size || 100;
   const height = size || 100;
-  const fillColor = fill || "transparent";
+  const fillColor = isHovered ? fill : "transparent";
   const outlineColor = stroke || "#fff";
 
   return (
     <div
+      onMouseEnter={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => setIsHovered(false)}
       style={{
         position: "absolute",
         top: `${xAxisAdjustment * 70}px`,
