@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Light.css";
+import "./Hexagon.css";
 
 // is there a way to indicate that a prop may sometimes not be defined?
 function Hexagon({

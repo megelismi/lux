@@ -1,4 +1,4 @@
-.light-grid-container {
+/* .light-grid-container {
   border: 8px solid yellow;
 }
 
@@ -18,17 +18,19 @@
 .light-grid-shifted {
   margin-left: 90px;
   margin-top: -50px;
-}
+} */
 
 /* right now this is only being used for the hexagon svg, so maybe make
  * it specific to that one component */
-.svg-light-body {
-  transition: fill 0.5s ease-out; /* Slower fade-out effect */
+/* .svg-light-body {
+/* Slower fade-out effect 
+  transition: fill 0.5s ease-out; 
 }
 
 .svg-light-body:hover {
-  transition: fill 0.25s ease-in; /* Faster fade-in effect */
-}
+  /* Faster fade-in effect
+  transition: fill 0.25s ease-in; 
+} */
 
 /* TODO: set dynamic colors and give colors pretty effects: fade, blink etc */
 /* q: does hover work on mobile? */
