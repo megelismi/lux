@@ -38,7 +38,6 @@ function ColorCircle({ color }: { color: string }) {
   );
 }
 
-// TODO: think about a way to show that a color is selected
 function ColorPicker() {
   return (
     <div className="color-picker">

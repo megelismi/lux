@@ -3,16 +3,19 @@
   width: 25px;
   height: 25px;
   cursor: pointer;
-  margin: 6px;
+  margin: 8px;
   transition: all 0.2s ease-in-out;
+  border: 3px solid transparent;
 }
 
 .color-circle:hover {
   transform: scale(1.3);
+  border: 3px solid white;
 }
 
 .color-selected {
   transform: scale(1.3);
+  border: 3px solid white;
 }
 
 .color-picker {
