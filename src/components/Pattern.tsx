@@ -1,9 +1,14 @@
 import "./Pattern.css";
+import { useContext } from "react";
+import { Context } from "../Context";
 import Hexagon from "./Hexagon";
 
 // TODO: maybe change this file to "Hexagon Pattern..."
 
 const generateHexagons = () => {
+  const { patternColor } = useContext(Context);
+  console.log(`the pattern color is...${patternColor}`);
+
   const hexCollection = [];
 
   // TODO: change this so that height and width are dynamically calculated
@@ -20,7 +25,7 @@ const generateHexagons = () => {
       hexCollection.push(
         <Hexagon
           key={`hexagon-${i}-${j}`}
-          fill={"blue"}
+          fill={patternColor}
           xAxisAdjustment={i}
           yAxisAdjustment={j}
         />

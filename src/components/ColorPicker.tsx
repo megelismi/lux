@@ -1,4 +1,6 @@
 import "./ColorPicker.css";
+import { useContext } from "react";
+import { Context } from "../Context";
 
 // default colors
 const COLORS = [
@@ -23,15 +25,18 @@ const COLORS = [
 ];
 
 function ColorCircle({ color }: { color: string }) {
+  const { patternColor, setPatternColor } = useContext(Context);
+
   return (
     <div
       style={{ backgroundColor: color }}
-      onClick={() => console.log(`${color} clicked!`)}
+      onClick={() => setPatternColor(color)}
       className="color-circle"
     ></div>
   );
 }
 
+// TODO: think about a way to show that a color is selected
 function ColorPicker() {
   return (
     <div className="color-picker">
