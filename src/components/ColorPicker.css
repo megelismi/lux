@@ -1,0 +1,17 @@
+.color-circle {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.color-circle:hover {
+  transform: scale(1.2);
+}
+
+.color-picker {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}

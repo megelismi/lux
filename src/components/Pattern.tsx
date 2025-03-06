@@ -18,7 +18,12 @@ const generateHexagons = () => {
     for (let j = 0; j < countX; j++) {
       // adjust the rows and columns so that we create a honeycomb pattern
       hexCollection.push(
-        <Hexagon fill={"blue"} xAxisAdjustment={i} yAxisAdjustment={j} />
+        <Hexagon
+          key={`hexagon-${i}-${j}`}
+          fill={"blue"}
+          xAxisAdjustment={i}
+          yAxisAdjustment={j}
+        />
       );
     }
   }

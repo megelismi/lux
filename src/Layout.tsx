@@ -7,11 +7,13 @@ function Layout() {
   return (
     <div className="layout">
       <div className="header">HEADER</div>
-      <div className="sidebar">
-        <ControlPanel />
-      </div>
-      <div className="main">
-        <Pattern />
+      <div>
+        <div className="main">
+          <div className="sidebar">
+            <ControlPanel />
+          </div>
+          <Pattern />
+        </div>
       </div>
     </div>
   );
