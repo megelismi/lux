@@ -31,7 +31,9 @@ function ColorCircle({ color }: { color: string }) {
     <div
       style={{ backgroundColor: color }}
       onClick={() => setPatternColor(color)}
-      className="color-circle"
+      className={`${
+        patternColor === color ? "color-selected" : ""
+      } color-circle`}
     ></div>
   );
 }
