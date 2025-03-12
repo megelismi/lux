@@ -7,7 +7,6 @@ function ControlPanel() {
       style={{
         display: "flex",
         justifyContent: "center",
-        padding: "24px 12px",
       }}
     >
       <ColorPicker />
