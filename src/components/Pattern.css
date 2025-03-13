@@ -1,8 +1,5 @@
 .pattern-container {
   position: relative;
   border: 6px solid white;
-  height: 500px;
-  width: 700px;
   overflow: hidden;
-  margin: 0 auto;
 }

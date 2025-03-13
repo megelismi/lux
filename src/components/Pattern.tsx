@@ -7,13 +7,12 @@ import Hexagon from "./Hexagon";
 
 const generateHexagons = () => {
   const { patternColor } = useContext(Context);
-  console.log(`the pattern color is...${patternColor}`);
 
   const hexCollection = [];
 
   // TODO: change this so that height and width are dynamically calculated
   const fixedContainerHeight = 500;
-  const fixedContainerWidth = 700;
+  const fixedContainerWidth = 800;
 
   // add extra rows and columns so that we give the illusion of an endless pattern
   const countY = Math.ceil(fixedContainerHeight / 100) + 3;

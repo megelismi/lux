@@ -3,12 +3,7 @@ import "./ControlPanel.css";
 
 function ControlPanel() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <div className="control-panel">
       <ColorPicker />
     </div>
   );
