@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Cube from "./Cube";
-import "./Light.css";
 import "./Cube.css";
 
 function Grid() {
