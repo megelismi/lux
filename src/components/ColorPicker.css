@@ -21,4 +21,5 @@
 .color-picker {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  width: 330px;
 }
