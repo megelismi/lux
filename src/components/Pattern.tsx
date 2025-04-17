@@ -24,9 +24,9 @@ const generateHexagons = () => {
       hexCollection.push(
         <Hexagon
           key={`hexagon-${i}-${j}`}
+          row={i}
+          column={j}
           fill={patternColor}
-          xAxisAdjustment={i}
-          yAxisAdjustment={j}
         />
       );
     }
