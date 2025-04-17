@@ -12,21 +12,23 @@ function Layout() {
 
   return (
     <Context.Provider value={{ patternColor, setPatternColor }}>
-      <div className="layout">
-        <div className="header">
-          <Header />
-        </div>
-        <div>
-          <div className="main">
-            <div className="sidebar">
-              <ControlPanel />
-            </div>
-            <Pattern />
-          </div>
-        </div>
-      </div>
+      <Pattern />
     </Context.Provider>
   );
 }
+
+// <div className="layout">
+//   <div className="header">
+//     <Header />
+//   </div>
+//   <div>
+//     <div className="main">
+//       <div className="sidebar">
+//         <ControlPanel />
+//       </div>
+//       <Pattern />
+//     </div>
+//   </div>
+// </div>
 
 export default Layout;

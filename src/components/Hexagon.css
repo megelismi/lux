@@ -1,7 +1,29 @@
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .svg-light-body {
-  transition: fill 0.5s ease-out; /* Slower fade-out effect */
+  transition: stroke 0.25s ease-out; /* Slower fade-out effect */
 }
 
 .svg-light-body:hover {
-  transition: fill 0.25s ease-in; /* Faster fade-in effect */
+  transition: stroke 0.25s ease-in; /* Faster fade-in effect */
+}
+
+.hex-harp:hover {
+  animation: shake 0.5s;
 }

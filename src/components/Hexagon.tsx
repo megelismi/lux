@@ -58,37 +58,35 @@ function Hexagon({
   // width and height should be the same value
   const width = size || 100;
   const height = size || 100;
-  const fillColor = isHovered ? fill : "transparent";
-  const outlineColor = stroke || "#fff";
+  const fillColor = "transparent";
+  const outlineColor = isHovered ? fill : "#fff";
 
   return (
-    <div
+    <svg
+      style={{
+        position: "absolute",
+        top: `${row * 90}px`,
+        left: `${column * 108 + ((row * 54) % 108)}px`,
+      }}
+      className="hex-harp"
       onMouseEnter={() => {
         setIsHovered(true);
         playAudio(row);
       }}
       onMouseLeave={() => setIsHovered(false)}
-      style={{
-        position: "absolute",
-        top: `${row * 70}px`,
-        left: `${column * 88 + ((row * 44) % 88)}px`,
-      }}
+      width={`${width}px`}
+      height={`${height}px`}
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        width={`${width}px`}
-        height={`${height}px`}
-        viewBox="0 0 15 15"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          className="svg-light-body"
-          d="M14 4.21281L7.5 0.421143L1 4.21281V10.7872L7.5 14.5788L14 10.7872V4.21281Z"
-          fill={fillColor}
-          stroke={outlineColor}
-        />
-      </svg>
-    </div>
+      <path
+        className="svg-light-body"
+        d="M14 4.21281L7.5 0.421143L1 4.21281V10.7872L7.5 14.5788L14 10.7872V4.21281Z"
+        fill={fillColor}
+        stroke={outlineColor}
+      />
+    </svg>
   );
 }
 
