@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { Context } from "../Context";
+import { useState, useContext, useEffect } from "react";
 import "./Hexagon.css";
 import harp0top from "../assets/audio/harp_audio/harp_0_top.mp3";
 import harp1bottom from "../assets/audio/harp_audio/harp_1_bottom.mp3";
@@ -40,26 +41,13 @@ const playAudio = (row: number) => {
 
 // is there a way to indicate that a prop may sometimes not be defined?
 function Hexagon({
-  fill,
-  stroke,
-  size,
   row,
   column,
 }: {
-  fill: string;
-  stroke: string;
-  size: number;
   row: number; // this is the row adjustment so that we can create a honeycomb pattern
   column: number; // this is the column adjustment so that we can create a honeycomb pattern
 }) {
   const [isHovered, setIsHovered] = useState(false);
-
-  // set a default width and height if one is not given
-  // width and height should be the same value
-  const width = size || 100;
-  const height = size || 100;
-  const fillColor = "transparent";
-  const outlineColor = isHovered ? fill : "#fff";
 
   return (
     <svg
@@ -74,17 +62,29 @@ function Hexagon({
         playAudio(row);
       }}
       onMouseLeave={() => setIsHovered(false)}
-      width={`${width}px`}
-      height={`${height}px`}
+      width="100px"
+      height="100px"
       viewBox="0 0 15 15"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <defs>
+        <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop
+            offset="0%"
+            style={{ stopColor: "rgba(34,175,245,1)", stopOpacity: 1 }}
+          />
+          <stop
+            offset="100%"
+            style={{ stopColor: "rgba(98,247,151,1)", stopOpacity: 1 }}
+          />
+        </linearGradient>
+      </defs>
       <path
         className="svg-light-body"
         d="M14 4.21281L7.5 0.421143L1 4.21281V10.7872L7.5 14.5788L14 10.7872V4.21281Z"
-        fill={fillColor}
-        stroke={outlineColor}
+        fill="none"
+        stroke={isHovered ? `url(#gradientStroke)` : "#fff"}
       />
     </svg>
   );

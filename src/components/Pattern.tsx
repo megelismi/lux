@@ -1,37 +1,47 @@
 import "./Pattern.css";
-import { useContext } from "react";
+import "./Hexagon.css";
+import { useContext, useState } from "react";
 import { Context } from "../Context";
 import Hexagon from "./Hexagon";
 
-// TODO: maybe change this file to "Hexagon Pattern..."
+// const Hexagon = ({ row, column }: { row: number; column: number }) => {
+//   const [isHovered, setIsHovered] = useState(false);
+//
+//   return (
+//     <div
+//       onMouseEnter={() => setIsHovered(true)}
+//       onMouseLeave={() => setIsHovered(false)}
+//       style={{
+//         position: "absolute",
+//         top: `${row * 55}px`,
+//         left: `${column * 190 + ((row * 95) % 190)}px`,
+//         backgroundImage: isHovered
+//           ? "linear-gradient(to right, red, yellow)"
+//           : "",
+//       }}
+//       key={`hexagon-${row}-${column}`}
+//       className="hexagon"
+//     ></div>
+//   );
+// };
 
 const generateHexagons = () => {
-  const { patternColor } = useContext(Context);
-
   const hexCollection = [];
 
-  // TODO: change this so that height and width are dynamically calculated
-
-  console.log("window.innerHeight", window.innerHeight);
-  console.log("window.innerWidth", window.innerWidth);
   const fixedContainerHeight = window.innerHeight;
   const fixedContainerWidth = window.innerWidth;
 
   // add extra rows and columns so that we give the illusion of an endless pattern
-  const countY = Math.ceil(fixedContainerHeight / 100) + 1;
-  const countX = Math.ceil(fixedContainerWidth / 100) + 1;
+  const countY = Math.ceil(fixedContainerHeight / 100) + 3;
+  const countX = Math.ceil(fixedContainerWidth / 100) + 3;
 
   for (let i = 0; i < countY; i++) {
     for (let j = 0; j < countX; j++) {
+      const row = i;
+      const column = j;
       // adjust the rows and columns so that we create a honeycomb pattern
       hexCollection.push(
-        <Hexagon
-          key={`hexagon-${i}-${j}`}
-          row={i}
-          column={j}
-          fill={patternColor}
-          stroke={patternColor}
-        />
+        <Hexagon key={`hexagon-${i}-${j}`} row={i} column={j} />
       );
     }
   }
@@ -42,16 +52,11 @@ const generateHexagons = () => {
 function Pattern() {
   const hexagons = generateHexagons();
 
-  // TODO: dynamically grab the size of the pattern container
-  // so that it scales with screen size
-
   return (
     <div className="pattern-container">
       <div className="pattern">{hexagons}</div>
     </div>
   );
 }
-
-// style={{ position: "absolute" }}
 
 export default Pattern;
